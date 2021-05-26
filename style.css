@@ -1,0 +1,55 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+
+  padding: 0px;
+}
+body {
+  font-family: "Arvo", serif;
+  background-color: rgb(255, 237, 74);
+}
+.container {
+  margin-top: 15em;
+  text-align: center;
+}
+#todoinput {
+  outline: none;
+  border-color: gray;
+  border-width: 0.1px;
+  border-radius: 5px;
+  width: 400px;
+  height: 30px;
+  font-weight: 400;
+}
+
+#button {
+  cursor: pointer;
+  background-color: rgb(3, 123, 128);
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 60px;
+  color: white;
+  border-radius: 5px;
+}
+.todoitem {
+  width: 400px;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: honeydew;
+  display: flex;
+  justify-content: space-around;
+}
+#todolist {
+  /* text-align: center; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* width: auto; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn btn-danger {
+  float: right;
+}
