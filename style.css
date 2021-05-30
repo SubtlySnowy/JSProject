@@ -90,3 +90,6 @@ ul {
   display: flex;
   justify-content: center;
 }
+.fa-trash-alt {
+  pointer-events: none;
+}

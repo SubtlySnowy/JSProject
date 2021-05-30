@@ -4,13 +4,14 @@ const todoInput = document.querySelector("#todoinput")
 const todoButton = document.querySelector("#todo-button")
 const todoUl = document.querySelector("#todo-ul")
 const inputText = document.getElementById("todoinput")
+const DeleteButton = document.querySelector(".btn-danger")
 // const entry = document.getElementById("todoinput")
 
 //Event Listerns
 
 todoButton.addEventListener("click", addToDo)
 
-
+DeleteButton.addEventListener("click", DeleteItem )
 
 
 //Functions
@@ -37,6 +38,7 @@ function addToDo(event){
   TrashButton.innerHTML = ` <i class="fas fa-trash-alt"></i>`
   TrashButton.classList.add("btn")
   TrashButton.classList.add("btn-danger")
+  TrashButton.addEventListener("click", DeleteItem )
   todoDiv.appendChild(TrashButton)
 
   //append to list
@@ -47,9 +49,14 @@ function addToDo(event){
 }
 
 
+function DeleteItem(event){
+  clickedButton = event.target
+  clickedButton.parentElement.remove()
+}
 
-
-
+printItems() =>{
+  
+}
 
 
 
