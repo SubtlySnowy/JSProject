@@ -22,7 +22,7 @@ body {
   font-weight: 400;
 }
 
-#button {
+#todo-button {
   cursor: pointer;
   background-color: rgb(3, 123, 128);
   border: none;
@@ -32,24 +32,61 @@ body {
   color: white;
   border-radius: 5px;
 }
+
+.todo-ul {
+  display: flex;
+  justify-content: center;
+  /* text-align: center;
+  align-self: center; */
+}
 .todoitem {
   width: 400px;
   margin-top: 20px;
   height: 40px;
   border-radius: 5px;
   background-color: honeydew;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
 }
 #todolist {
   /* text-align: center; */
   /* margin-left: auto;
   margin-right: auto; */
   /* width: auto; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+}
+.btn {
+  /* float: right; */
+  /* float: right; */
+}
+ul {
+  align-self: center;
+  list-style: none;
+}
+.todo-item {
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+#btn-trash {
+  margin-right: 2px;
+}
+
+#btn-check {
+  margin-right: 10px;
+}
+
+.todo-item {
+  width: 400px;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: honeydew;
+}
+.todo-div {
+  text-align: center;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-}
-.btn btn-danger {
-  float: right;
 }
