@@ -32,8 +32,9 @@ function addToDo(event){
   completedButton.innerHTML = ` <i class="fas fa-check"></i>`
   completedButton.classList.add("btn")
   completedButton.classList.add("btn-success")
+  completedButton.addEventListener("click", printitems)
   todoDiv.appendChild(completedButton)
-//trash button
+  //trash button
   const TrashButton = document.createElement("button")
   TrashButton.innerHTML = ` <i class="fas fa-trash-alt"></i>`
   TrashButton.classList.add("btn")
@@ -54,8 +55,9 @@ function DeleteItem(event){
   clickedButton.parentElement.remove()
 }
 
-printItems() =>{
-  
+function printitems(event){
+  clickedButton = event.target
+  console.log(clickedButton.parentElement) 
 }
 
 

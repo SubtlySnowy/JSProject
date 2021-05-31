@@ -33,15 +33,17 @@ body {
   border-radius: 5px;
 }
 
-.todo-ul {
-  display: flex;
-  justify-content: center;
+#todo-ul {
+  min-width: 30%;
+  list-style: none;
+  /* display: flex;
+  justify-content: center; */
   /* text-align: center;
   align-self: center; */
 }
 .todoitem {
   width: 400px;
-  margin-top: 20px;
+  margin-top: 0.5rem;
   height: 40px;
   border-radius: 5px;
   background-color: honeydew;
@@ -53,8 +55,8 @@ body {
   /* margin-left: auto;
   margin-right: auto; */
   /* width: auto; */
-  /* display: flex; */
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
   /* flex-direction: column; */
 }
 .btn {
@@ -62,8 +64,7 @@ body {
   /* float: right; */
 }
 ul {
-  align-self: center;
-  list-style: none;
+  /* list-style: none; */
 }
 .todo-item {
   /* display: flex;
@@ -71,25 +72,35 @@ ul {
 }
 
 #btn-trash {
-  margin-right: 2px;
+  /* margin-right: 2px; */
 }
 
 #btn-check {
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .todo-item {
-  width: 400px;
+  /* width: 400px;
   margin-top: 20px;
   height: 40px;
   border-radius: 5px;
-  background-color: honeydew;
+  background-color: honeydew; */
 }
 .todo-div {
+  margin: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 10px;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: center; */
 }
-.fa-trash-alt {
+.fa-trash-alt, .fa-check {
   pointer-events: none;
+}
+.btn{
+  /* height: 40px;
+  width: 40px; */
 }
