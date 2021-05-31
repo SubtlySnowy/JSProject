@@ -11,9 +11,9 @@ const DeleteButton = document.querySelector(".btn-danger")
 
 todoButton.addEventListener("click", addToDo)
 
-DeleteButton.addEventListener("click", DeleteItem )
 
 
+//Hello how are you today? are uou doing good? I  believe so HOw sit ahtkkk 
 //Functions
 
 function addToDo(event){
@@ -43,21 +43,32 @@ function addToDo(event){
   todoDiv.appendChild(TrashButton)
 
   //append to list
-
+  
   todoUl.appendChild(todoDiv)
+  inputText.value = ""
 
 
 }
 
 
 function DeleteItem(event){
-  clickedButton = event.target
-  clickedButton.parentElement.remove()
+  const clickedButton = event.target
+  
+  const item = clickedButton.parentElement
+  item.classList.add("falling")
+  // item.remove()
+
+  item.addEventListener("transitionend", function(){
+    console.log("ended")
+      item.remove()
+      // alert("H")
+
+  }, false)
 }
 
 function printitems(event){
   clickedButton = event.target
-  console.log(clickedButton.parentElement) 
+  clickedButton.parentElement.classList.toggle("completed")
 }
 
 

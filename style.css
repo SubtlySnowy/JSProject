@@ -80,6 +80,7 @@ ul {
 }
 
 .todo-item {
+  padding: 0rem 0.5rem;
   /* width: 400px;
   margin-top: 20px;
   height: 40px;
@@ -87,20 +88,30 @@ ul {
   background-color: honeydew; */
 }
 .todo-div {
-  margin: 0.5rem;
+  margin: 0.7rem;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 10px;
+  /* transition: opacity 0.5s ease-in-out; /* margin-top: 10px; */
   text-align: center;
   display: flex;
-  justify-content: center; */
+  justify-content: center;
+  transition: all 0.5s ease;
 }
-.fa-trash-alt, .fa-check {
+.todo-div li {
+  flex: 1;
+}
+.fa-trash-alt,
+.fa-check {
   pointer-events: none;
 }
-.btn{
-  /* height: 40px;
-  width: 40px; */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.falling {
+  /* transition: all 1s ease; */
+  transform: translateY(8rem) rotateZ(25deg);
+  /* opacity: 0; */
 }
