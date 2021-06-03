@@ -5,16 +5,36 @@ const todoButton = document.querySelector("#todo-button")
 const todoUl = document.querySelector("#todo-ul")
 const inputText = document.getElementById("todoinput")
 const DeleteButton = document.querySelector(".btn-danger")
+// const task = document.querySelector("#task")
+const choice = document.querySelectorAll('input[name="choice"]')
 // const entry = document.getElementById("todoinput")
 
 //Event Listerns
 
-todoButton.addEventListener("click", addToDo)
+todoButton.addEventListener("click", checkInput)
+
+
+function checkInput(event){
+  event.preventDefault()
+  const validTag = returnValue(choice)
+  
+  console.log(validTag)
+  // console.log(valid)
+  if(inputText.value === null || inputText.value === ""){
+    alert("please enter a task!")
+    return
+  }else if(validTag === false){
+    alert("Please select a type!")
+    return
+    
+  }else{
+    console.log(inputText.value)
+    addToDo(event)
+  }
+}
 
 
 
-//Hello how are you today? are uou doing good? I  believe so HOw sit ahtkkk 
-//Functions
 
 function addToDo(event){
   event.preventDefault()
@@ -23,29 +43,34 @@ function addToDo(event){
   todoDiv.classList.add("todo-div")
   //create todo
   const newTodo =  document.createElement('li')
-  newTodo.innerText = inputText.value
+  newTodo.innerHTML = inputText.value
   newTodo.classList.add("todo-item")
+  // todoDiv.classList.add("validTask")
 
   todoDiv.appendChild(newTodo)
-  //check button
-  const completedButton = document.createElement("button")
-  completedButton.innerHTML = ` <i class="fas fa-check"></i>`
-  completedButton.classList.add("btn")
-  completedButton.classList.add("btn-success")
-  completedButton.addEventListener("click", printitems)
-  todoDiv.appendChild(completedButton)
-  //trash button
-  const TrashButton = document.createElement("button")
-  TrashButton.innerHTML = ` <i class="fas fa-trash-alt"></i>`
-  TrashButton.classList.add("btn")
-  TrashButton.classList.add("btn-danger")
-  TrashButton.addEventListener("click", DeleteItem )
-  todoDiv.appendChild(TrashButton)
+  // add tag
 
-  //append to list
+  value = returnValue(choice)
+  const tag = document.createElement("span")
+  tag.innerHTML = value
+  tag.classList.add(value)
+  todoDiv.appendChild(tag)
+
+  //check button
+  CheckButton = CreateCheckButton()
+  todoDiv.appendChild(CheckButton)
+
+  //trash button
+  TrashButton = CreateTrashButton()
+  todoDiv.appendChild(TrashButton)
+  //add a span tag for the type of todo 
   
+
+  //append to list  
   todoUl.appendChild(todoDiv)
   inputText.value = ""
+  value = ""
+
 
 
 }
@@ -53,17 +78,11 @@ function addToDo(event){
 
 function DeleteItem(event){
   const clickedButton = event.target
-  
   const item = clickedButton.parentElement
   item.classList.add("falling")
-  // item.remove()
-
-  item.addEventListener("transitionend", function(){
-    console.log("ended")
-      item.remove()
-      // alert("H")
-
-  }, false)
+  setInterval(function(){
+    item.remove()
+  } ,400)
 }
 
 function printitems(event){
@@ -71,66 +90,35 @@ function printitems(event){
   clickedButton.parentElement.classList.toggle("completed")
 }
 
-
-
-//   createItem= () =>{
-//     const todocontainer = document.getElementById("todolist")
-//     const entry = document.getElementById("todoinput")
-//     const todoitem = `
-//     <li>
-//     <div class="todoitem"> ${entry.value} <button id="btn" class="btn btn-danger"> <i class="fas fa-trash-alt"></i></button> </div> 
-
-// </li>    ` 
-//     var divlist = document.getElementById("todo-ul")
-    
-//     // InvoiceRow.getElementsByClassName('rmv')[0].addEventListener('click', removeCartItem)
-
-//     divlist.innerHTML += todoitem
-//     // const list = document.getElementById("todolist")
-//     // list.getElementsByClassName("btn btn-danger")[0].addEventListener('click', removetodo)
-
-// }
-
-// const button1  = document.getElementById('button')
-
-// button1.addEventListener("click", createItem)
-
-// // lmao.addEventListener("click", e )
-
-
-
-
-// const list = document.getElementById("todolist")
+function returnValue(choice){
+  for(const c of choice){
+    if(c.checked){
+      return c.value
+    }
+  }
+    if(choice[2].checked == false){
+      return false
+    }
   
-
-// // const Deletebutton  = list.getElementsByClassName('btn btn-danger')[0]
-
-// // list.addEventListener('click', removetodo)
-
-// removetodo = () =>{
-//   // var buttonClicked = event.target
-//   // var deleteBtn = list.getElementsByClassName("btn btn-danger").length
-  
-//   alert(deleteBtn)
+}
 
 
-// }
-// var deleteBtn = list.getElementsByClassName("btn btn-danger")
+function CreateTrashButton(){
+  const TrashButton = document.createElement("button")
+  TrashButton.innerHTML = ` <i class="fas fa-trash-alt"></i>`
+  TrashButton.classList.add("trashbutton")
+  TrashButton.addEventListener("click", DeleteItem )
 
-//   var btn = deleteBtn[0]
-//   btn.addEventListener('click',removetodo)
-
-
-
-//   // buttonClicked.parentElement.remove()
-  
-
-//   // const Deletebutton  = list.getElementsByClassName('btn btn-danger')[n]
-//   // Deletebutton.parentElement.remove()
-//   // alert("Hey")
+  return TrashButton
+}
 
 
+function CreateCheckButton(){
+  const CheckButton = document.createElement("button")
+  CheckButton.innerHTML = ` <i class="fas fa-check"></i>`
+  CheckButton.classList.add("checkbutton")
+  CheckButton.addEventListener("click", printitems)
 
-  
+  return CheckButton
 
-
+}
