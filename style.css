@@ -91,7 +91,7 @@ margin-bottom: 20px;
 }
 
 .falling {
-  transform: translateY(8rem) rotateZ(-25deg);
+  transform: translateY(8rem) rotateZ(25deg);
   opacity: 0;
 }
 
