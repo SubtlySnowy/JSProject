@@ -18,8 +18,6 @@ function checkInput(event){
   event.preventDefault()
   const validTag = returnValue(choice)
   
-  console.log(validTag)
-  // console.log(valid)
   if(inputText.value === null || inputText.value === ""){
     alert("please enter a task!")
     return
@@ -28,7 +26,6 @@ function checkInput(event){
     return
     
   }else{
-    console.log(inputText.value)
     addToDo(event)
   }
 }

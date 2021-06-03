@@ -3,15 +3,9 @@
 * {
   margin: 0px;
   box-sizing: border-box;
-
   padding: 0px;
-
-  
 }
 
-html{
-  
-}
 body {
   font-family: 'Noto Sans JP', sans-serif;
   background-image: rgb(131,58,180);
@@ -21,16 +15,12 @@ body {
   
  }
 .container {
-  /* width: 1200px;
-  max-width: 100%; */
+
   margin-top: 15em;
   text-align: center;
 }
-
-
 #todoinput,#todo-button {
 outline: none;
-
 padding: 0.5rem;
 font-size: 1.5rem;
 border:none;
@@ -81,14 +71,11 @@ margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* transition: opacity 0.5s ease-in-out; /* margin-top: 10px; */
   text-align: left;
   display: flex;
   justify-content: center;
   transition: all 0.5s ease;
   animation: slide-up 0.6s ease;
-
-  /* box-shadow: 5px 5px #ffd562; */
 
 }
 .todo-div li {
@@ -132,12 +119,8 @@ margin-bottom: 20px;
 .task{
   opacity: 0.8;
   color: white;
-  /* border-radius: 5px; */
   background-color: #017BFE;
   padding: 0.625rem 0.5rem 0.625rem 0.5rem;
-  
-
-
   font-size: 70%;
   min-width:65px;
   text-align:center;
@@ -150,8 +133,6 @@ margin-bottom: 20px;
   font-size: 70%;
   min-width:65px;
   text-align:center;
-
-
 }
 .other{
   opacity: 0.8;
